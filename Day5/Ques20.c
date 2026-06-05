@@ -1,0 +1,22 @@
+// Write a program to Find largest prime factor
+#include <stdio.h>
+int main() {
+long long num, i;
+printf("Enter a number: ");
+scanf("%lld", &num);
+long long largestFactor = -1;
+while (num % 2 == 0) {
+largestFactor = 2;
+num = num / 2;
+}
+for (i = 3; i * i <= num; i += 2) {
+while (num % i == 0) {
+largestFactor = i;
+num = num / i;
+}}
+if (num > 2){
+largestFactor = num;
+}
+printf("Largest Prime Factor = %lld\n", largestFactor);
+return 0;
+}
